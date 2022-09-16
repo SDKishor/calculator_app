@@ -10,49 +10,54 @@ const App = () => {
   const [result, setResult] = useState("");
 
   const addToText = (val) => {
-    setText((text) => [...text, val]);
+    setText((text) => [...text, val].join(""));
   };
 
   const calculateResult = () => {
-    const input = text.join(""); // Remove commas
-    console.log(input);
-    setResult(math.evaluate(input));
+    setResult(math.evaluate(text));
   };
 
   const resetInput = () => {
     setText("");
     setResult("");
   };
-
-  // <Button symbol="7" handleClick={addToText} />;
+  const deleteInput = () => {
+    setText(text.slice(0, -1));
+    setResult("");
+  };
 
   return (
     <div className="App">
       <div className="calc_wrapper">
         <div className="display_container">
-          <div className="previous">123+</div>
-          <div className="current">4561111111</div>
+          <div className="previous">{text}</div>
+          <div className="current">{result}</div>
         </div>
         <div className="btn_container">
-          <Button symbol="AC" />
-          <Button symbol="DEL" />
-          <Button symbol="%" />
-          <Button symbol="/" />
-          <Button symbol="7" />
-          <Button symbol="8" />
-          <Button symbol="9" />
-          <Button symbol="*" />
-          <Button symbol="4" />
-          <Button symbol="5" />
-          <Button symbol="6" />
-          <Button symbol="-" />
-          <Button symbol="1" />
-          <Button symbol="2" />
-          <Button symbol="3" />
-          <Button symbol="+" />
-          <Button symbol="0" />
-          <Button symbol="." />
-          <Button symbol="=" btn2="btn2" spanTwo="spanTwo" />
+          <Button symbol="AC" handleClick={resetInput} />
+          <Button symbol="DEL" handleClick={deleteInput} />
+          <Button symbol="%" handleClick={addToText} />
+          <Button symbol="/" handleClick={addToText} />
+          <Button symbol="7" handleClick={addToText} />
+          <Button symbol="8" handleClick={addToText} />
+          <Button symbol="9" handleClick={addToText} />
+          <Button symbol="*" handleClick={addToText} />
+          <Button symbol="4" handleClick={addToText} />
+          <Button symbol="5" handleClick={addToText} />
+          <Button symbol="6" handleClick={addToText} />
+          <Button symbol="-" handleClick={addToText} />
+          <Button symbol="1" handleClick={addToText} />
+          <Button symbol="2" handleClick={addToText} />
+          <Button symbol="3" handleClick={addToText} />
+          <Button symbol="+" handleClick={addToText} />
+          <Button symbol="0" handleClick={addToText} />
+          <Button symbol="." handleClick={addToText} />
+          <Button
+            symbol="="
+            btn2="btn2"
+            spanTwo="spanTwo"
+            handleClick={calculateResult}
+          />
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ const Button = ({
 }) => {
   return (
     <div
-      // onClick={() => handleClick(symbol)}
+      onClick={() => handleClick(symbol)}
       className={"button-wrapper " + btn2 + " " + spanTwo}
       style={{ backgroundColor: color }}
     >
