@@ -1,0 +1,81 @@
+:root {
+  --btn-color: #5468ff;
+  --btn-color2: #5adaff;
+  --btn-color3: #3c4fe0;
+}
+
+.spanTwo {
+  grid-column: span 2;
+}
+
+.button-wrapper {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    var(--btn-color2) 0,
+    var(--btn-color) 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  transition: box-shadow 0.15s, transform 0.15s;
+  font-size: 18px;
+  height: 60px;
+  width: 100%;
+}
+
+.button-wrapper:focus {
+  box-shadow: var(--btn-color3) 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    var(--btn-color3) 0 -3px 0 inset;
+}
+
+.button-wrapper:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, var(--btn-color3) 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-wrapper:active {
+  box-shadow: var(--btn-color3) 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.btn2 {
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #fab564 0,
+    #fc6c4c 100%
+  );
+}
+
+.btn2:focus {
+  box-shadow: #96341e 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #96341e 0 -3px 0 inset;
+}
+
+.btn2:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #96341e 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.btn2:active {
+  box-shadow: #96341e 0 3px 7px inset;
+  transform: translateY(2px);
+}
